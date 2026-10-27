@@ -1,0 +1,62 @@
+:root {
+  --bg: #ffffff;
+  --text: #1d2129;
+  --muted: #5b6270;
+  --border: #e3e6eb;
+  --accent: #e0284a;
+  --card: #f6f7f9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --text: #e8eaef;
+    --muted: #9aa2b1;
+    --border: #2a2f3a;
+    --accent: #ff5c78;
+    --card: #171a21;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+a { color: var(--accent); }
+
+header {
+  border-bottom: 1px solid var(--border);
+}
+header .wrap {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding-top: 18px; padding-bottom: 18px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; }
+.logo {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 9px;
+  background: var(--accent); color: #fff; font-size: 13px;
+}
+nav { display: flex; gap: 18px; font-size: 15px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--text); }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+main { padding: 40px 0 60px; }
+h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 36px 0 8px; }
+.muted { color: var(--muted); }
+.lead { font-size: 18px; color: var(--muted); margin: 0 0 28px; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 28px 0; }
+.feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+.feature b { display: block; margin-bottom: 4px; }
+.feature span { color: var(--muted); font-size: 15px; }
+
+.note { background: var(--card); border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 18px; margin: 24px 0; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+footer { border-top: 1px solid var(--border); padding: 22px 0 40px; font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
